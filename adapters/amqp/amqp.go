@@ -4,8 +4,8 @@ import (
 	"os"
 
 	"github.com/assembla/cony"
-	"github.com/maxperrimond/kurin"
 	"github.com/streadway/amqp"
+	"github.com/zenportinc/kurin"
 )
 
 type (

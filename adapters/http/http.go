@@ -2,18 +2,19 @@ package http
 
 import (
 	"fmt"
-	"github.com/gorilla/mux"
 	"net/http"
 	"strconv"
 	"time"
+
+	"github.com/gorilla/mux"
 
 	"context"
 
 	"os"
 
-	"github.com/maxperrimond/kurin"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
+	"github.com/zenportinc/kurin"
 )
 
 type (
@@ -101,7 +102,7 @@ func createLabelsFromRequestResponse(router *mux.Router, r *http.Request, crw *c
 	var match mux.RouteMatch
 	routeExists := router.Match(r, &match)
 	if routeExists && match.Route != nil {
-		handler,_ = match.Route.GetPathTemplate()
+		handler, _ = match.Route.GetPathTemplate()
 	}
 
 	labels := prometheus.Labels{}
