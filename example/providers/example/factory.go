@@ -1,8 +1,8 @@
 package example
 
 import (
-	"github.com/maxperrimond/kurin/example/domain"
-	"github.com/maxperrimond/kurin/example/engine"
+	"github.com/zenportinc/kurin/example/domain"
+	"github.com/zenportinc/kurin/example/engine"
 )
 
 type (

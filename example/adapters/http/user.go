@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"github.com/maxperrimond/kurin/example/engine"
+	"github.com/zenportinc/kurin/example/engine"
 )
 
 func listUsersHandler(e engine.Engine) http.HandlerFunc {

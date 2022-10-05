@@ -1,6 +1,6 @@
 package engine
 
-import "github.com/maxperrimond/kurin/example/domain"
+import "github.com/zenportinc/kurin/example/domain"
 
 type (
 	Engine interface {

@@ -3,7 +3,7 @@ package engine
 import (
 	"fmt"
 
-	"github.com/maxperrimond/kensho"
+	"github.com/zenportinc/kensho"
 )
 
 type (

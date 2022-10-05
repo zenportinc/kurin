@@ -1,7 +1,7 @@
 package engine
 
 import (
-	"github.com/maxperrimond/kurin/example/domain"
+	"github.com/zenportinc/kurin/example/domain"
 )
 
 type (

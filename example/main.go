@@ -1,10 +1,10 @@
 package main
 
 import (
-	"github.com/maxperrimond/kurin"
-	"github.com/maxperrimond/kurin/example/adapters/http"
-	"github.com/maxperrimond/kurin/example/engine"
-	"github.com/maxperrimond/kurin/example/providers/example"
+	"github.com/zenportinc/kurin"
+	"github.com/zenportinc/kurin/example/adapters/http"
+	"github.com/zenportinc/kurin/example/engine"
+	"github.com/zenportinc/kurin/example/providers/example"
 	"go.uber.org/zap"
 )
 

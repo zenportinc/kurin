@@ -6,9 +6,9 @@ import (
 
 	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
-	"github.com/maxperrimond/kurin"
-	httpAdapter "github.com/maxperrimond/kurin/adapters/http"
-	"github.com/maxperrimond/kurin/example/engine"
+	"github.com/zenportinc/kurin"
+	httpAdapter "github.com/zenportinc/kurin/adapters/http"
+	"github.com/zenportinc/kurin/example/engine"
 	"go.uber.org/zap"
 )
 

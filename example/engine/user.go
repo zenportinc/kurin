@@ -1,8 +1,8 @@
 package engine
 
 import (
-	"github.com/maxperrimond/kensho"
-	"github.com/maxperrimond/kurin/example/domain"
+	"github.com/zenportinc/kensho"
+	"github.com/zenportinc/kurin/example/domain"
 )
 
 type (
