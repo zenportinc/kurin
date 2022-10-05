@@ -1,7 +1,6 @@
 package engine
 
 import (
-	"github.com/zenportinc/kensho"
 	"github.com/zenportinc/kurin/example/domain"
 )
 
@@ -22,9 +21,13 @@ func (engine *exampleEngine) GetUser(id string) (*domain.User, error) {
 }
 
 func (engine *exampleEngine) CreateUser(r *CreateUserRequest) (*domain.User, error) {
-	valid, errors := kensho.Validate(r)
+	valid, _, err := engine.validator.Validate(r)
+	if err != nil {
+		return nil, err
+	}
+
 	if !valid {
-		return nil, NewInvalid(r, errors)
+		return nil, NewInvalid(r, err)
 	}
 
 	user := &domain.User{

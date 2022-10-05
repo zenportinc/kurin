@@ -1,6 +1,9 @@
 package engine
 
-import "github.com/zenportinc/kurin/example/domain"
+import (
+	"github.com/zenportinc/kensho"
+	"github.com/zenportinc/kurin/example/domain"
+)
 
 type (
 	Engine interface {
@@ -12,5 +15,6 @@ type (
 
 	exampleEngine struct {
 		userRepository UserRepository
+		validator      *kensho.Validator
 	}
 )

@@ -1,5 +1,7 @@
 package engine
 
+import "github.com/zenportinc/kensho"
+
 type (
 	Factory interface {
 		NewEngine() Engine
@@ -15,7 +17,9 @@ func NewFactory(e ExampleProviderFactory) Factory {
 }
 
 func (f *engineFactory) NewEngine() Engine {
+	validator := kensho.NewValidator()
 	return &exampleEngine{
 		userRepository: f.NewUserRepository(),
+		validator:      validator,
 	}
 }

@@ -2,8 +2,6 @@ package engine
 
 import (
 	"fmt"
-
-	"github.com/zenportinc/kensho"
 )
 
 type (
@@ -14,7 +12,7 @@ type (
 
 	Invalid struct {
 		Obj     interface{}
-		Errors  *kensho.ValidationError
+		Err     error
 		Message string
 	}
 )
@@ -27,8 +25,8 @@ func (err *NotFound) Error() string {
 	return fmt.Sprintf(`not found "%s" with given id "%s"`, err.TypeName, err.ID)
 }
 
-func NewInvalid(obj interface{}, errors *kensho.ValidationError) *Invalid {
-	return &Invalid{obj, errors, ""}
+func NewInvalid(obj interface{}, err error) *Invalid {
+	return &Invalid{obj, err, ""}
 }
 
 func (err *Invalid) Error() string {

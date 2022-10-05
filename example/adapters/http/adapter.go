@@ -12,33 +12,33 @@ import (
 	"go.uber.org/zap"
 )
 
-func NewHTTPAdapter(e engine.Engine, port int, logger *zap.Logger) kurin.Adapter {
-	r := mux.NewRouter().StrictSlash(false)
-	r.NewRoute().
+func NewAdapter(e engine.Engine, port int, logger *zap.Logger) kurin.Adapter {
+	router := mux.NewRouter().StrictSlash(false)
+	router.NewRoute().
 		Name("List all users").
 		Methods(http.MethodGet).
 		Path("/users").
 		Handler(listUsersHandler(e))
-	r.NewRoute().
+	router.NewRoute().
 		Name("Create user").
 		Methods(http.MethodPost).
 		Path("/users").
 		Handler(createUserHandler(e))
-	r.NewRoute().
+	router.NewRoute().
 		Name("Get user").
 		Methods(http.MethodGet).
 		Path("/users/{id}").
 		Handler(getUserHandler(e))
-	r.NewRoute().
+	router.NewRoute().
 		Name("Delete user").
 		Methods(http.MethodDelete).
 		Path("/users/{id}").
 		Handler(deleteUserHandler(e))
 
-	h := handlers.RecoveryHandler()(r)
-	h = handlers.CompressHandler(h)
-	h = handlers.ContentTypeHandler(h, "application/json")
-	h = handlers.CombinedLoggingHandler(os.Stdout, h)
+	handler := handlers.RecoveryHandler()(router)
+	handler = handlers.CompressHandler(handler)
+	handler = handlers.ContentTypeHandler(handler, "application/json")
+	handler = handlers.CombinedLoggingHandler(os.Stdout, handler)
 
-	return httpAdapter.NewHTTPAdapter(h, port, "1.0.0", logger.Sugar())
+	return httpAdapter.NewHTTPAdapter(router, handler, port, "1.0.0", logger.Sugar())
 }

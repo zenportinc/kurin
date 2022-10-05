@@ -15,11 +15,11 @@ func main() {
 	exampleProviderFactory := example.NewFactory()
 
 	// Engine
-	engineFactory := engine.NewFactory(exampleProviderFactory)
-	e := engineFactory.NewEngine()
+	e := engine.NewFactory(exampleProviderFactory).NewEngine()
 
 	// App
-	a := kurin.NewApp("Example", http.NewHTTPAdapter(e, 7272, logger))
-	a.RegisterSystems(exampleProviderFactory)
-	a.Run()
+	app := kurin.NewApp("Example", http.NewAdapter(e, 7272, logger))
+	app.RegisterSystems(exampleProviderFactory)
+	app.SetLogger(logger.Sugar())
+	app.Run()
 }
