@@ -5,7 +5,7 @@ go 1.19
 require (
 	github.com/assembla/cony v0.3.2
 	github.com/go-pg/pg v8.0.4+incompatible
-	github.com/gorilla/mux v1.7.2
+	github.com/gorilla/mux v1.8.0
 	github.com/prometheus/client_golang v0.9.4-0.20190528132958-f0a455664ecb
 	github.com/streadway/amqp v0.0.0-20190404075320-75d898a42a94
 	go.uber.org/zap v1.10.0
