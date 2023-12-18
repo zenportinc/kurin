@@ -3,7 +3,7 @@ package postgres
 import (
 	"time"
 
-	"github.com/go-pg/pg"
+	"github.com/go-pg/pg/v9"
 	"go.uber.org/zap"
 )
 
