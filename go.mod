@@ -3,11 +3,11 @@ module github.com/zenportinc/kurin
 go 1.19
 
 require (
-	github.com/assembla/cony v0.3.2
 	github.com/go-pg/pg/v9 v9.2.1
 	github.com/gorilla/mux v1.8.0
 	github.com/prometheus/client_golang v0.9.4-0.20190528132958-f0a455664ecb
-	github.com/streadway/amqp v0.0.0-20190404075320-75d898a42a94
+	github.com/rabbitmq/amqp091-go v1.9.0
+	github.com/zenportinc/carrotmq v0.0.0-20240311045416-ef9642e945c8
 	go.uber.org/zap v1.10.0
 )
 

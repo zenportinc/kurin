@@ -3,15 +3,15 @@ package amqp
 import (
 	"os"
 
-	"github.com/assembla/cony"
-	"github.com/streadway/amqp"
+	amqp "github.com/rabbitmq/amqp091-go"
+	"github.com/zenportinc/carrotmq"
 	"github.com/zenportinc/kurin"
 )
 
 type (
 	Adapter struct {
-		client   *cony.Client
-		consumer *cony.Consumer
+		client   *carrotmq.Client
+		consumer *carrotmq.Consumer
 		handler  DeliveryHandler
 		onStop   chan os.Signal
 		logger   kurin.Logger
@@ -20,7 +20,7 @@ type (
 	DeliveryHandler func(msg amqp.Delivery)
 )
 
-func NewAMQPAdapter(client *cony.Client, consumer *cony.Consumer, handler DeliveryHandler, logger kurin.Logger) kurin.Adapter {
+func NewAMQPAdapter(client *carrotmq.Client, consumer *carrotmq.Consumer, handler DeliveryHandler, logger kurin.Logger) kurin.Adapter {
 	return &Adapter{
 		client:   client,
 		consumer: consumer,
@@ -30,14 +30,18 @@ func NewAMQPAdapter(client *cony.Client, consumer *cony.Consumer, handler Delive
 }
 
 func (adapter *Adapter) Open() {
-	adapter.logger.Info("Consuming amqp...")
-	for adapter.client.Loop() {
+	adapter.logger.Info("Consuming amqp... test")
+	adapter.client.StartConsuming()
+	for {
 		select {
 		case msg := <-adapter.consumer.Deliveries():
 			adapter.handler(msg)
 		case err := <-adapter.client.Errors():
-			adapter.logger.Fatal(err)
+			adapter.logger.Error("Client error: %v\n", err)
+		case err := <-adapter.consumer.Errors():
+			adapter.logger.Error("Consumer error: %v\n", err)
 		}
+
 	}
 }
 
