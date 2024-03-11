@@ -7,8 +7,8 @@ require (
 	github.com/gorilla/mux v1.8.0
 	github.com/prometheus/client_golang v0.9.4-0.20190528132958-f0a455664ecb
 	github.com/rabbitmq/amqp091-go v1.9.0
-	github.com/zenportinc/carrotmq v0.0.0-20240311045416-ef9642e945c8
-	go.uber.org/zap v1.10.0
+	github.com/zenportinc/carrotmq v0.0.0-20240311084303-514b1f633e55
+	go.uber.org/zap v1.27.0
 )
 
 require (
@@ -29,7 +29,7 @@ require (
 	github.com/vmihailenco/msgpack/v4 v4.3.12 // indirect
 	github.com/vmihailenco/tagparser v0.1.1 // indirect
 	go.uber.org/atomic v1.4.0 // indirect
-	go.uber.org/multierr v1.1.0 // indirect
+	go.uber.org/multierr v1.10.0 // indirect
 	golang.org/x/crypto v0.0.0-20200820211705-5c72a883971a // indirect
 	golang.org/x/net v0.0.0-20220722155237-a158d28d115b // indirect
 	google.golang.org/appengine v1.6.6 // indirect
