@@ -130,6 +130,8 @@ github.com/zenportinc/carrotmq v0.0.0-20240313023508-c37c7b3066f4 h1:gktNPmzh3HW
 github.com/zenportinc/carrotmq v0.0.0-20240313023508-c37c7b3066f4/go.mod h1:aLcwtLlUpna3lCDWSoteogvgDEnKPrzB1CGThXO1sAU=
 github.com/zenportinc/carrotmq v0.0.0-20240313031647-566fa923fbfa h1:bGiBNwBFtlpsyVS/zD4tqiBp0M3GV8h67tTDc9CLi9k=
 github.com/zenportinc/carrotmq v0.0.0-20240313031647-566fa923fbfa/go.mod h1:aLcwtLlUpna3lCDWSoteogvgDEnKPrzB1CGThXO1sAU=
+github.com/zenportinc/carrotmq v0.0.0-20240313071801-409a275a8307 h1:z61waSJeNrsOdyBheyQ7AlMJWMVioxSqLXoxDREfwho=
+github.com/zenportinc/carrotmq v0.0.0-20240313071801-409a275a8307/go.mod h1:aLcwtLlUpna3lCDWSoteogvgDEnKPrzB1CGThXO1sAU=
 go.uber.org/atomic v1.4.0 h1:cxzIVoETapQEqDhQu3QfnvXAV4AlzcvUCxkVUFw3+EU=
 go.uber.org/atomic v1.4.0/go.mod h1:gD2HeocX3+yG+ygLZcrzQJaqmWj9AIm7n08wl/qW/PE=
 go.uber.org/goleak v1.2.1 h1:NBol2c7O1ZokfZ0LEU9K6Whx/KnwvepVetCUhtKja4A=
