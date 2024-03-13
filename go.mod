@@ -7,7 +7,7 @@ require (
 	github.com/gorilla/mux v1.8.0
 	github.com/prometheus/client_golang v0.9.4-0.20190528132958-f0a455664ecb
 	github.com/rabbitmq/amqp091-go v1.9.0
-	github.com/zenportinc/carrotmq v0.0.0-20240311084303-514b1f633e55
+	github.com/zenportinc/carrotmq v0.0.0-20240313023508-c37c7b3066f4
 	go.uber.org/zap v1.27.0
 )
 

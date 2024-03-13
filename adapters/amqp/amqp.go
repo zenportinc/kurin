@@ -32,6 +32,7 @@ func NewAMQPAdapter(client *carrotmq.Client, consumer *carrotmq.Consumer, handle
 func (adapter *Adapter) Open() {
 	adapter.logger.Info("Consuming amqp... test")
 	adapter.client.StartClient()
+	adapter.client.Consume()
 	for {
 		select {
 		case msg := <-adapter.consumer.Deliveries():
