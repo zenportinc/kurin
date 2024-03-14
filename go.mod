@@ -3,12 +3,12 @@ module github.com/zenportinc/kurin
 go 1.19
 
 require (
-	github.com/assembla/cony v0.3.2
 	github.com/go-pg/pg/v9 v9.2.1
 	github.com/gorilla/mux v1.8.0
 	github.com/prometheus/client_golang v0.9.4-0.20190528132958-f0a455664ecb
-	github.com/streadway/amqp v0.0.0-20190404075320-75d898a42a94
-	go.uber.org/zap v1.10.0
+	github.com/rabbitmq/amqp091-go v1.9.0
+	github.com/zenportinc/carrotmq v0.0.0-20240313071801-409a275a8307
+	go.uber.org/zap v1.27.0
 )
 
 require (
@@ -29,7 +29,7 @@ require (
 	github.com/vmihailenco/msgpack/v4 v4.3.12 // indirect
 	github.com/vmihailenco/tagparser v0.1.1 // indirect
 	go.uber.org/atomic v1.4.0 // indirect
-	go.uber.org/multierr v1.1.0 // indirect
+	go.uber.org/multierr v1.10.0 // indirect
 	golang.org/x/crypto v0.0.0-20200820211705-5c72a883971a // indirect
 	golang.org/x/net v0.0.0-20220722155237-a158d28d115b // indirect
 	google.golang.org/appengine v1.6.6 // indirect
