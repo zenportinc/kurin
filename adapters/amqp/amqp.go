@@ -1,12 +1,16 @@
 package amqp
 
 import (
+	"context"
 	"os"
 
 	"github.com/assembla/cony"
 	"github.com/streadway/amqp"
 	"github.com/zenportinc/kurin"
+	"github.com/zenportinc/service-core/go/tracing"
 )
+
+var tracer = tracing.NewTracer()
 
 type (
 	Adapter struct {
@@ -24,7 +28,7 @@ func NewAMQPAdapter(client *cony.Client, consumer *cony.Consumer, handler Delive
 	return &Adapter{
 		client:   client,
 		consumer: consumer,
-		handler:  handler,
+		handler:  tracingMiddleware(handler),
 		logger:   logger,
 	}
 }
@@ -48,5 +52,15 @@ func (adapter *Adapter) Close() {
 func (adapter *Adapter) OnFailure(err error) {
 	if err != nil {
 		adapter.logger.Fatal(err)
+	}
+}
+
+func tracingMiddleware(next DeliveryHandler) DeliveryHandler {
+	return func(msg amqp.Delivery) {
+		// TODO: Add context to the DeliveryHandler
+		_, span := tracer.Start(context.TODO(), tracing.SpanName())
+		defer span.End()
+
+		next(msg)
 	}
 }
